@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="theme-toggle" id="themeToggle" title="Toggle light/dark mode"></div>
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button id="clear">C</button>
+      <button id="sqrt">√</button>
+      <button id="percent">%</button>
+      <button class="btn-op">/</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="btn-op">*</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="btn-op">-</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="btn-op">+</button>
+
+      <button style="grid-column: 1 / span 2;">0</button>
+      <button>.</button>
+      <button id="equals">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+<script>
+const themeToggle = document.getElementById('themeToggle');
+let darkMode = true;
+function setTheme(dark) {
+  document.body.classList.toggle('dark-mode', dark);
+  themeToggle.classList.toggle('dark', dark);
+}
+themeToggle.addEventListener('click', () => {
+  darkMode = !darkMode;
+  setTheme(darkMode);
+});
+setTheme(true);
+</script>
+</body>
+</html>

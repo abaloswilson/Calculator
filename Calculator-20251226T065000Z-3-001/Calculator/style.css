@@ -1,0 +1,207 @@
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid #888;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border 0.2s;
+  z-index: 10;
+}
+.theme-toggle:after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px #fff;
+  transition: background 0.2s;
+}
+.theme-toggle.dark {
+  background: #fff;
+  border: 2px solid #333;
+}
+.theme-toggle.dark:after {
+  background: #222;
+  box-shadow: 0 0 4px #222;
+}
+
+body {
+  position: relative;
+}
+body.dark-mode {
+  background: #181818;
+}
+body:not(.dark-mode) {
+  background: #f0f0f0;
+}
+.dark-mode .calculator {
+  background: #232323;
+}
+body:not(.dark-mode) .calculator {
+  background: #fff;
+}
+.dark-mode #display {
+  background: #181818;
+  color: #fff;
+  border: 1px solid #444;
+}
+body:not(.dark-mode) #display {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+.dark-mode button {
+  background: #333;
+  color: #fff;
+}
+.dark-mode button:hover {
+  background: #444;
+}
+body:not(.dark-mode) button {
+  background: #e0e0e0;
+  color: #222;
+}
+body:not(.dark-mode) button:hover {
+  background: #b0b0b0;
+}
+.dark-mode #equals {
+  background: #43d17a;
+  color: #181818;
+}
+.dark-mode #equals:hover {
+  background: #2e8b57;
+}
+body:not(.dark-mode) #equals {
+  background: #4caf50;
+  color: #fff;
+}
+body:not(.dark-mode) #equals:hover {
+  background: #357a38;
+}
+.dark-mode #clear, .dark-mode #clearEntry {
+  background: #ff6b6b;
+  color: #fff;
+}
+.dark-mode #clear:hover, .dark-mode #clearEntry:hover {
+  background: #b71c1c;
+}
+body:not(.dark-mode) #clear, body:not(.dark-mode) #clearEntry {
+  background: #ff6b6b;
+  color: #fff;
+}
+body:not(.dark-mode) #clear:hover, body:not(.dark-mode) #clearEntry:hover {
+  background: #d32f2f;
+}
+.dark-mode #sqrt {
+  background: #2196f3;
+  color: #fff;
+}
+.dark-mode #sqrt:hover {
+  background: #0d47a1;
+}
+body:not(.dark-mode) #sqrt {
+  background: #2196f3;
+  color: #fff;
+}
+body:not(.dark-mode) #sqrt:hover {
+  background: #1565c0;
+}
+body {
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.calculator {
+  background: #232323;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: fit-content;
+}
+#display {
+  width: 100%;
+  height: 40px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: right;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #181818;
+  color: #fff;
+}
+/* Advanced layout for more buttons */
+/* Adjusted for new button arrangement */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  grid-auto-rows: 44px;
+  gap: 8px;
+  justify-content: center;
+}
+
+button {
+  width: 44px;
+  height: 44px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+button:hover {
+  background: #444;
+}
+#equals {
+  background: #43d17a;
+  color: #181818;
+  font-size: 1.3em;
+}
+#equals:hover {
+  background: #2e8b57;
+}
+/* Make 0 button span two columns and remain square */
+button[style*="grid-column: 1 / span 2"] {
+  grid-column: 1 / span 2;
+  width: 96px;
+}
+#clear, #clearEntry {
+  background: #ff6b6b;
+  color: #fff;
+}
+#clear:hover, #clearEntry:hover {
+  background: #b71c1c;
+}
+#equals {
+  background: #4caf50;
+  color: #fff;
+}
+#equals:hover {
+  background: #357a38;
+}
+#sqrt {
+  background: #2196f3;
+  color: #fff;
+}
+#sqrt:hover {
+  background: #0d47a1;
+}
